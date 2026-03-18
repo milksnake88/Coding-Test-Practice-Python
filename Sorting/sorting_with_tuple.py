@@ -11,7 +11,7 @@ students = [
 # lambda 함수의 x인자에 들어오는 값은 하나의 tuple
 students.sort(key=lambda x : x[0]) # 국어 점수 기준 오름차순 정렬
 
-for kor, eng, math in students:
+for kor, eng, math in students: 
     print(kor, eng, math)
 
 # >> 20 80 80
@@ -22,7 +22,11 @@ for kor, eng, math in students:
 
 students.sort(key=lambda x : -x[0]) # 국어 점수 기준 내림차순 정렬
 
-for kor, eng, math in students:
+# for student in students:
+#     kor, eng, math = student
+#     print(kor, eng, math)
+
+for kor, eng, math in students: # unpacking을 for loop와 함께
     print(kor, eng, math)
 
 # >> 90 80 90
