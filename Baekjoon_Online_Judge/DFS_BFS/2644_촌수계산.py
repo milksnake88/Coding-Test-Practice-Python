@@ -4,21 +4,21 @@
 
 def bfs(s, e):
     q = []
-    q.append((0, s))
+
+    q.append(s)
     v[s] = 1
 
     while q:
-        c = q[0][1]
-        cnt = q[0][0]
-        q.pop(0)
-        if c == e:
-            return cnt
-    
+        c = q.pop(0)
+        if c == e: # 목적지 찾음
+            return v[e]-1 # 나와 한칸 떨어져있으면 1촌
+
         for n in adj[c]:
             if not v[n]:
-                q.append((cnt+1, n))
-                v[n] = 1
+                q.append(n)
+                v[n] = v[c]+1
 
+    # 이곳의 코드를 실행했다면... 찾지 못한 것!
     return -1
 
 n = int(input())
