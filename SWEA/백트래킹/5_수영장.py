@@ -11,7 +11,7 @@ def dfs(n, sm):
     if ans<=sm:
         return
     
-    if n>=12:
+    if n>12:
         ans = min(ans, sm)
         return
     
@@ -23,11 +23,11 @@ def dfs(n, sm):
 T = int(input())
 for test_case in range(1, T+1):
     day, mon, mon3, year = map(int, input().split())
-    lst = list(map(int, input().split()))
+    lst = [0] + list(map(int, input().split()))
 
     # [1] 백트래킹 사용
     # ans = 31*12*3000
-    # dfs(0, 0)
+    # dfs(1, 0)
 
     # [2] 그리디한 방법(DP)
     D = [0]*13
